@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://cm2r4yv8pmmw6"]
+
+[ext_resource type="PackedScene" uid="uid://citpo2i1wjsbi" path="res://controller.tscn" id="1_du8si"]
+[ext_resource type="AudioStream" uid="uid://hkirsvcbr27n" path="res://Sounds/JBM_Sfxr_pack_1/samples/powerup/powerup07.wav" id="2_1ncdq"]
+[ext_resource type="AudioStream" uid="uid://byr3j55os07k8" path="res://Sounds/boom_pack/boom2.wav" id="2_8wrr1"]
+[ext_resource type="AudioStream" uid="uid://dob7gwmo4vfdn" path="res://Sounds/JBM_Sfxr_pack_1/samples/powerdown/powerdown05.wav" id="3_iws1v"]
+[ext_resource type="AudioStream" uid="uid://barutsdcyifwh" path="res://Sounds/newthingget.ogg" id="5_usmq4"]
+[ext_resource type="AudioStream" uid="uid://dlomsggp14txv" path="res://Sounds/minigame1.mp3" id="6_1twn5"]
+[ext_resource type="AudioStream" uid="uid://b7q16upg0avpk" path="res://Sounds/JBM_Sfxr_pack_1/samples/powerup/powerup01.wav" id="7_kas58"]
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="Controller" parent="." node_paths=PackedStringArray("score_label", "streak_label", "multiplier_label", "camera", "background_music", "successful_hit_sound", "fast_hit_sound", "multiplier_sound", "wrong_button_sound", "high_score_sound", "timer_bar_1", "timer_bar_2", "game_over_label", "background_dimmer") instance=ExtResource("1_du8si")]
+score_label = NodePath("../ScoreLabel")
+streak_label = NodePath("../StreakLabel")
+multiplier_label = NodePath("../MultiplierLabel")
+camera = NodePath("../Camera2D")
+background_music = NodePath("../BackgroundMusic")
+successful_hit_sound = NodePath("../ButtonHitSound")
+fast_hit_sound = NodePath("../FastHitSound")
+multiplier_sound = NodePath("../MultiplierUp")
+wrong_button_sound = NodePath("../WrongButtonSound")
+high_score_sound = NodePath("../HighScoreSound")
+timer_bar_1 = NodePath("../TimerBar1")
+timer_bar_2 = NodePath("../TimerBar2")
+game_over_label = NodePath("../GameOverLabel")
+background_dimmer = NodePath("../BackgroundDimmer")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -104.0
+offset_right = 20.0
+offset_bottom = -81.0
+horizontal_alignment = 1
+
+[node name="StreakLabel" type="Label" parent="."]
+offset_left = -123.0
+offset_top = 84.0
+offset_right = -55.0
+offset_bottom = 107.0
+text = "Streak: 0"
+
+[node name="MultiplierLabel" type="Label" parent="."]
+offset_left = -123.0
+offset_top = 63.0
+offset_right = -83.0
+offset_bottom = 86.0
+
+[node name="GameOverLabel" type="Label" parent="."]
+visible = false
+z_index = 1
+offset_left = -43.0
+offset_top = -59.0
+offset_right = 44.0
+offset_bottom = -36.0
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="BackgroundDimmer" type="ColorRect" parent="."]
+visible = false
+offset_left = -150.0
+offset_top = -148.0
+offset_right = 150.0
+offset_bottom = 152.0
+color = Color(0, 0, 0, 0.615686)
+
+[node name="TimerBar1" type="ProgressBar" parent="."]
+z_index = -1
+offset_left = -43.0
+offset_top = 53.0
+offset_right = -3.0
+offset_bottom = 93.0
+max_value = 2.0
+value = 1.0
+fill_mode = 1
+
+[node name="TimerBar2" type="ProgressBar" parent="."]
+z_index = -1
+offset_left = 2.0
+offset_top = 53.0
+offset_right = 42.0
+offset_bottom = 93.0
+max_value = 2.0
+value = 1.0
+show_percentage = false
+
+[node name="MultiplierUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_1ncdq")
+pitch_scale = 2.56
+
+[node name="WrongButtonSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_iws1v")
+pitch_scale = 2.52
+
+[node name="ButtonHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8wrr1")
+
+[node name="HighScoreSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_usmq4")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1twn5")
+
+[node name="FastHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_kas58")
+pitch_scale = 2.5

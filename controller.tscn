@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://citpo2i1wjsbi"]
+
+[ext_resource type="Texture2D" uid="uid://bfjtdtgnud8bb" path="res://ControllerAssets/snes.png" id="1_tvoi1"]
+[ext_resource type="Script" path="res://Scripts/controller.gd" id="1_ujhen"]
+[ext_resource type="Texture2D" uid="uid://cc1c7jlqrf50g" path="res://ControllerAssets/up.png" id="2_o3j4h"]
+[ext_resource type="Texture2D" uid="uid://bauk23u5ctr2k" path="res://ControllerAssets/down.png" id="3_5a3oi"]
+[ext_resource type="Texture2D" uid="uid://dw8f1wthblvst" path="res://ControllerAssets/right.png" id="4_1qmbm"]
+[ext_resource type="Texture2D" uid="uid://b7da7ies1qfnp" path="res://ControllerAssets/left.png" id="5_yfhhj"]
+[ext_resource type="Texture2D" uid="uid://ch2w3focpe12y" path="res://ControllerAssets/blue-button.png" id="6_8g85q"]
+[ext_resource type="Texture2D" uid="uid://jmuhe0ln7bfm" path="res://ControllerAssets/purple-button.png" id="9_y21to"]
+
+[node name="Controller" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_ujhen")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tvoi1")
+
+[node name="UpButton" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="UpButton"]
+position = Vector2(-40.5014, -5.99912)
+texture = ExtResource("2_o3j4h")
+
+[node name="DownButton" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="DownButton"]
+position = Vector2(-40.5014, 12.0009)
+texture = ExtResource("3_5a3oi")
+
+[node name="RightButton" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RightButton"]
+position = Vector2(-31.5014, 3.00088)
+texture = ExtResource("4_1qmbm")
+
+[node name="LeftButton" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftButton"]
+position = Vector2(-49.5014, 3.00088)
+texture = ExtResource("5_yfhhj")
+
+[node name="YButton" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="YButton"]
+position = Vector2(26.9963, 1.49944)
+texture = ExtResource("6_8g85q")
+
+[node name="XButton" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="XButton"]
+position = Vector2(38.9963, -10.5006)
+texture = ExtResource("6_8g85q")
+
+[node name="AButton" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AButton"]
+position = Vector2(50.9963, 1.49944)
+texture = ExtResource("9_y21to")
+
+[node name="BButton" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="BButton"]
+position = Vector2(38.9963, 13.4994)
+texture = ExtResource("9_y21to")
